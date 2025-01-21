@@ -53,14 +53,14 @@ import { stringify } from 'querystring'
 // const write = fs.writeFileSync("./student.json", JSON.stringify(result))
 
 
-const deleteStudent = (b)=>{
-    let data = JSON.parse(fs.readFileSync("Student.json", 'utf8'))
-    const result = data.filter(IdCheck);
-    function IdCheck(a) {
-        return a.id != b;
-    }
-    fs.writeFileSync("Student.json", JSON.stringify(result))
-}
+// const deleteStudent = (b)=>{
+//     let data = JSON.parse(fs.readFileSync("Student.json", 'utf8'))
+//     const result = data.filter(IdCheck);
+//     function IdCheck(a) {
+//         return a.id != b;
+//     }
+//     fs.writeFileSync("Student.json", JSON.stringify(result))
+// }
 
 // const read =  () => {
 //     let data = fs.readFileSync("Student.json", 'utf8')
@@ -69,7 +69,8 @@ const deleteStudent = (b)=>{
 
 // console.log(read());
 let student = {
-    seat : "3c"
+    name : "test",
+    seat : "5b"
 }
 const upDate = (id,student) =>{
     let data = JSON.parse(fs.readFileSync("Student.json", 'utf8'))
@@ -88,9 +89,9 @@ const upDate = (id,student) =>{
     function IdNonCheck(a) {
         return a.id != 2;
     }
-    console.log(result);
     result.push(modify[0])
+    console.log(result);
     fs.writeFileSync("Student.json", JSON.stringify(result))
 }
-// deleteStudent(2)
 upDate(2,student)
+
